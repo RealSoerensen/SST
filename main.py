@@ -1,4 +1,5 @@
 import requests
+import os
 import uuid
 from gtts import gTTS, lang
 from playsound import playsound
@@ -66,11 +67,13 @@ if __name__ == "__main__":
     def play_translation(translated_input, language):
         try:
             # Create tts object of the translated text
-            tts_of_input = gTTS(text=translated_input, lang=language, slow=False)
+            tts_of_input = gTTS(text=translated_input, lang=language, slow=False)                
             # Save the audio file
             tts_of_input.save("output.mp3")
             # Return the audio file and play it
-            return playsound("output.mp3")
+            playsound("output.mp3")
+            # Delete the audio file
+            os.remove("output.mp3")
 
         except Exception as e:
             return messagebox.showerror("Error", "Error: " + str(e))
@@ -127,6 +130,9 @@ if __name__ == "__main__":
         language = list(SUPPORTED_LANG.keys())[list(SUPPORTED_LANG.values()).index(language)]
         # Translate the text
         translate(input_text, language)
+        label1.destroy()
+        label2.destroy()
+        window.update()
 
     # Create button and assign function to button when clicked
     btn = Button(window, text="Click to record", command=main)
