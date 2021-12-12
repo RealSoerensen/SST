@@ -20,7 +20,7 @@ Microsoft Cognitive Services Speech SDK - ```pip install azure-cognitiveservices
 
 The application is quite simple to navigate.
 
-Simply, select the langauge you speak and the language you want to translate to.
+Simply, select the language you speak and the language you want to translate to.
 
 Then, press the button and speak.
 
