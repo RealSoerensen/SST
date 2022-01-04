@@ -1,4 +1,4 @@
-# SST (Speech To speech Translator)
+# SST (Speech To Translated Speech Translator)
 
 This is my first project utilizing Tkinter, Microsofts Speech/Translate API, and gTTS.
 
